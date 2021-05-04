@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>I know what you mean</title>
+  <style>
+    body {
+      margin: 40px 60px;
+      max-width: 600px;
+
+      font-family: sans-serif;
+      font-size: 1.3em;
+      line-height: 1.5;
+    }
+    .dialogue {
+      font-style: italic;
+      color: #444;
+    }
+    .instructions {
+    }
+  </style>
+</head>
+<body>
+  <h1>I know what you mean</h1>
+  <p>
+    A game about definitions for 2 players. <br>
+  </p>
+  <p>~</p>
+  <p class="instructions">
+    Player 1 thinks of an object, say, a <em>spoon</em>.
+  </p>
+  <p class="dialogue">
+    P1 - I'm thinking of a spoon <br>
+    P2 - Cool, what's a spoon? <br>
+  </p>
+  <p class="instructions">
+    Player 1 then gives a single-detail description of a spoon. <br>
+  </p>
+  <p class="dialogue">
+    P1 - It's a tool for eating
+  </p>
+  <p class="instructions">
+    Player 2 willfully misinterprets this description <br>
+    for something else that matches that detail.
+  </p>
+  <p class="dialogue">
+    <span title="A fork is, also, a tool for eating">
+      P2 - Ahh you're thinking of a fork.
+    </span>
+  </p>
+  <p class="instructions">
+    Player 1 then has to clarify, by adding another detail. <br>
+    The description must be positive - you cannot say what its not or doesn't have -  e.g. <br>
+    <span style="color: tomato">"It doesn't have prongs" - wrong </span><br>
+    <span style="color: green">"It has an uninterupted surface" - better <br>
+  </p>
+  <p class="dialogue">
+    P1 - Well, It's not a fork because it's round. <br>
+    <span title="Round, used for eating">
+    P2 - Oh you mean a plate.</span><br>
+    P1 - Not a plate, because it lifts the food to your mouth <br>
+    <span title="Lifts food, round, used for eating">
+    P2 - Oh of course, chopsticks. </span><br>
+  </p>
+  <p class="instructions">
+    And so on and so forth, until Player 2 cannot think of any other option.<br>
+    Then swap roles and start again!<br>
+    The goal is to collaboratively extend the description as much as possible<br>
+    always getting more specific, but still open to misinterpretation.
+  </p>
+</body>
+</html>
