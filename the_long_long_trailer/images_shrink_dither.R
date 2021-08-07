@@ -124,5 +124,5 @@ final_emails <- new_emails %>%
 
 catch <- map2(final_emails$output_page, final_emails$output_name, ~write_file(.x,.y))
 
-knitr::pandoc(final_emails$output_name,format = "html")
+clipr::write_clip(knitr::pandoc(final_emails$output_name,format = "html"))
 
