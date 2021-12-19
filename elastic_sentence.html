@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  width: 600px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: 24px;
+  font-family: monospace;
+}
+</style>
+</head>
+<body>
+<textarea id="input_text" name="input_text" rows="4" cols="50">
+a blasted surface of an asteroid,
+ablated surface of an asteroid,
+late surface of an asteroid,
+late face of an asteroid,
+efface and asteroid,
+face an asteroid,
+face ad aster,
+ad astra
+</textarea>
+<br>
+<div onmousemove="myFunction(event)" ontouchmove = "myFunction(event)" ><p id="demo"></p>
+</div>
+
+<script>
+//add the content here
+const orgin = document.getElementById("demo").getBoundingClientRect();
+const scale = 14;
+//adjust this to read appropriate length for mouse x
+function myFunction(e) {
+  var pome = document.getElementById("input_text").value;
+  pome = pome.split(",");
+  var miin = pome[pome.length - 1].length;
+
+  var xpos = (e.clientX - orgin.left)/scale;
+  var available = pome.filter(x => x.length <= Math.max(xpos,miin));
+  var line = available.sort(
+    function (a, b) {
+        return b.length - a.length;
+    }
+)[0];
+  document.getElementById("demo").innerHTML = line;
+}
+
+function clearCoor() {
+  document.getElementById("demo").innerHTML = "";
+}
+</script>
+
+</body>
+</html>
