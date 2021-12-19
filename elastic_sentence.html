@@ -35,8 +35,13 @@ function myFunction(e) {
   var pome = document.getElementById("input_text").value;
   pome = pome.split(",");
   var miin = pome[pome.length - 1].length;
-
-  var xpos = (e.clientX - orgin.left)/scale;
+  if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+       var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+       x = touch.pageX;
+   } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+       x = e.clientX;
+   }
+  var xpos = (x - orgin.left)/scale;
   var available = pome.filter(x => x.length <= Math.max(xpos,miin));
   var line = available.sort(
     function (a, b) {
